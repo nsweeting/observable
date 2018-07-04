@@ -4,8 +4,7 @@ defmodule Observable.TestStruct do
   defstruct []
 
   observations do
-    on_action(:test_one, Observable.TestObserverOne)
-    on_action(:test_two, Observable.TestObserverOne)
-    on_action(:test_two, Observable.TestObserverTwo)
+    action(:test_one, [Observable.TestObserverOne])
+    action(:test_two, [Observable.TestObserverOne, Observable.TestObserverTwo])
   end
 end
