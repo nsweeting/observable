@@ -9,7 +9,7 @@ The package can be installed by adding `observable` to your list of dependencies
 ```elixir
 def deps do
   [
-    {:observable, "~> 0.3.0"}
+    {:observable, "~> 0.3"}
   ]
 end
 ```
