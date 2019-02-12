@@ -1,11 +1,14 @@
 defmodule Observable.Observer do
-  @callback handle_notify({atom, any}) :: any
+  @moduledoc false
 
+  @callback handle_notify(Observable.action(), Observable.data()) :: Observable.result()
+
+  @doc false
   def macro do
     quote do
       @behaviour Observable.Observer
 
-      def handle_notify(_notification) do
+      def handle_notify(_action, _data) do
         :ok
       end
 

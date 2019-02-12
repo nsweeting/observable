@@ -1,9 +1,12 @@
 defmodule Observable.Notifier do
+  @moduledoc false
+
+  @doc false
   def macro do
     quote do
       import Observable.Notifier, only: [observations: 1]
 
-      Module.register_attribute(__MODULE__, :observations, accumulate: true)
+      Module.register_attribute(__MODULE__, :observers, accumulate: true)
     end
   end
 
@@ -16,7 +19,7 @@ defmodule Observable.Notifier do
         :ok
       end
 
-      def __observations__(_) do
+      def __observers__(_) do
         []
       end
     end
@@ -24,7 +27,7 @@ defmodule Observable.Notifier do
 
   defmacro action(action, observers) do
     quote do
-      def __observations__(unquote(action)) do
+      def __observers__(unquote(action)) do
         unquote(observers)
       end
     end

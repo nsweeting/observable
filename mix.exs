@@ -1,18 +1,18 @@
 defmodule Observable.MixProject do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project do
     [
       app: :observable,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       description: description(),
       package: package(),
       start_permanent: Mix.env() == :prod,
-      name: "Ecto.Observable",
+      name: "Observable",
       docs: docs(),
       deps: deps()
     ]
@@ -25,13 +25,8 @@ defmodule Observable.MixProject do
     ]
   end
 
-  defp elixirc_paths(:test) do
-    ["lib", "test/support"]
-  end
-
-  defp elixirc_paths(_) do
-    ["lib"]
-  end
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
 
   defp description do
     """
@@ -57,6 +52,8 @@ defmodule Observable.MixProject do
   end
 
   defp deps do
-    []
+    [
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+    ]
   end
 end

@@ -9,7 +9,7 @@ The package can be installed by adding `observable` to your list of dependencies
 ```elixir
 def deps do
   [
-    {:observable, "~> 0.1.0"}
+    {:observable, "~> 0.3"}
   ]
 end
 ```
@@ -17,7 +17,3 @@ end
 ## Documentation
 
 See [HexDocs](https://hexdocs.pm/observable) for additional documentation.
-
-## Getting Started
-
-To come!
